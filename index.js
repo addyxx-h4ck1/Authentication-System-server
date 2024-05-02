@@ -22,7 +22,7 @@ app.use('/api/v1/login', loginRouter)
 app.use('/api/v1/refresh-token', refreshTokenRouter)
 app.use('/dashboard', dashboardRouter)
 
-//test route
+//test route (To be deleted)
 app.get('/api/users', (req, res) => {
   const data = [
     {
@@ -40,6 +40,7 @@ app.get('/api/users', (req, res) => {
   ]
   res.status(200).json({ ok: true, data: data })
 })
+//test route (to be deleted)
 
 //start server
 app.listen(port, () => console.log(`server is running on port ${port}`))
