@@ -1,12 +1,12 @@
-const usersDB = require('../db/users.json')
+const UsersDB = require('../models/usersSchema')
 
-const handleDashboard = (req, res) => {
+const handleDashboard = async (req, res) => {
   //get verified User
-  const { username } = req.user
-  if (!username) return res.status(403).json()
+  const { userID } = req.user
+  if (!userID) return res.sendStatus(401)
   //access users resources
-  let usersResources = usersDB.filter((el) => el.user === username)
-  res.status(200).json(usersResources)
+  const userData = await UsersDB.findById(userID)
+  res.status(200).json({ userData })
 }
 
 module.exports = { handleDashboard }
