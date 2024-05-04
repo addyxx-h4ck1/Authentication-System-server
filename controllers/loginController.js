@@ -37,7 +37,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true,
       maxAge: 24 * 60 * 60 * 1000,
     })
-    res.status(201).json({ accessToken })
+    res.status(201).json({ ID: newUserID, accessToken })
     return
   } catch (error) {
     res.status(500).json({ ok: false, msg: 'internal server error' })
