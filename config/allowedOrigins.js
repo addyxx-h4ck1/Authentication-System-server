@@ -4,6 +4,7 @@ const allowedOrigins = [
   'https://netlify.com/',
   'https://www.netlify.com/',
   'https://netlify.app/',
+  'https://authentication-sys.vercel.app',
 ]
 
 module.exports = { allowedOrigins }
